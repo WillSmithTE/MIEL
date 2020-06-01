@@ -1,0 +1,26 @@
+{
+    "name": "MIEL",
+    "version": "0.0.1",
+    "description": "Hide those pesky reminders of all the precious CASH you're dishing out for those dope PANTS",
+    "manifest_version": 2,
+    "content_scripts": [
+        {
+          "matches": [
+            "*://*.asos.com/",
+            "*://*.asos.com/au/"
+            ],
+          "js": ["js/checkout.js"],
+          "run_at": "document_idle"
+        },
+        {
+            "matches": ["*://*.asos.com/*bag*"],
+            "js": ["js/bag.js"],
+            "run_at": "document_idle"
+          },
+          {
+            "matches": ["*://*.asos.com/*"],
+            "js": ["js/dropdown.js"],
+            "run_at": "document_idle"
+          }  
+      ]    
+}
